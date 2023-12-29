@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <h1>Make A Mitten!</h1>
+    <div class="container">
+        <form>
+            <label for="stiches">stitches</label><input name="stitches" type="number" value="39" min="25" max="70" oninput="generatePattern()" />
+            <label for="rows">rows</label><input name="rows" type="number" value="70" min="40" max="100" oninput="generatePattern()" />
+            <label for="factor">flatten top</label><input type="range" name="factor" min="0" max="130" value="0" oninput="generatePattern()"/>
+            <label for="image">image for pattern</label><input type="file" name="image" onchange="readImage(this)"/>
+            <label for="offsetX">move left/right</label><input type="range" name="offsetX" min="-100" max="100" value="0" oninput="generatePattern()"/>
+            <label for="offsetY">move up/down</label><input type="range" name="offsetY" min="-100" max="100" value="0" oninput="generatePattern()"/>
+            <label for="size">resize small/large</label><input type="range" name="size" min="0" max="200" value="100" oninput="generatePattern()"/>
+            <label for="brightness">darker/lighter</label><input type="range" name="brightness" min="-200" max="200" value="0" oninput="generatePattern()"/>
+        </form>
+        <canvas id="my-canvas" width="800px" height="800px">A simple canvas to display a grid</canvas>
+    </div>
+</body>
+<script src="js/patternGeneratorRef.js"></script>
+</html>
